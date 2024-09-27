@@ -65,8 +65,8 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/seu_usuario/seu_repositorio.git
-   cd seu_repositorio
+   git clone https://github.com/AertySantos/arvore_geradora_minima.git
+   cd arvore_geradora_minima
    ```
 
 2. Execute o script para Kruskal ou Prim:
