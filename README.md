@@ -52,7 +52,7 @@ Esse processo de "percorrer todos os vértices \( V \) para cada vértice seleci
 | Abordagem      | Seleciona as arestas de menor peso e adiciona à árvore | Expande a partir de um vértice inicial |
 | Complexidade   | \( O(E \log E) \)              | \( O(V^2) \)             |
 | Melhor para    | Grafos esparsos                | Grafos densos                  |
-| Método         | Conjuntos disjuntos (Union-Find) | Fila de prioridade (Min-Heap)  |
+| Método         | Conjuntos disjuntos (Union-Find) |  Abordagem ingênua   |
 
 ---
 
