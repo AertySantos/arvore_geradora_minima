@@ -21,7 +21,7 @@ O algoritmo de Kruskal funciona adicionando arestas à MST de acordo com o menor
 3. Repetir o processo até que todos os vértices estejam conectados.
 
 ### Complexidade:
-- **Tempo**: \( O(E \log E) \), onde \( E \) é o número de arestas, devido à ordenação das arestas e à operação de união.
+- **Tempo**: \( O(E log E) \), onde \( E \) é o número de arestas, devido à ordenação das arestas e à operação de união.
 - **Uso**: Kruskal é mais eficiente quando o grafo é esparso (menos arestas).
 
 ---
@@ -50,7 +50,7 @@ Esse processo de "percorrer todos os vértices \( V \) para cada vértice seleci
 | Aspecto        | Kruskal                        | Prim                           |
 |----------------|--------------------------------|--------------------------------|
 | Abordagem      | Seleciona as arestas de menor peso e adiciona à árvore | Expande a partir de um vértice inicial |
-| Complexidade   | \( O(E \log E) \)              | \( O(V^2) \)             |
+| Complexidade   | \( O(E log E) \)              | \( O(V^2) \)             |
 | Melhor para    | Grafos esparsos                | Grafos densos                  |
 | Método         | Conjuntos disjuntos (Union-Find) |  Abordagem ingênua   |
 
@@ -89,7 +89,6 @@ Esse processo de "percorrer todos os vértices \( V \) para cada vértice seleci
 Entrada para um grafo com 4 vértices e 5 arestas:
 
 ```
-4 5
 0 1 10
 0 2 6
 0 3 5
