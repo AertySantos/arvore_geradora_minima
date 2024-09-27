@@ -39,7 +39,7 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
 ### Complexidade:
 - **Tempo**: O laço externo executa \( V - 1 \) vezes (aproximadamente \( V \) vezes). A cada iteração do laço externo, o laço interno percorre todos os vértices \( V \) para verificar as arestas entre os vértices já selecionados e os vértices ainda não selecionados.
 
-Esse processo de "percorrer todos os vértices \( V \) para cada vértice selecionado" resulta em um total de \( V \) iterações no laço externo multiplicado por \( V \) iterações no laço interno, dando uma complexidade total de \( O(V \times V) = O(V^2) \).
+Esse processo de "percorrer todos os vértices \( V ) para cada vértice selecionado" resulta em um total de \( V \) iterações no laço externo multiplicado por \( V \) iterações no laço interno, dando uma complexidade total de \( O(V x V) = O(V^2) \).
 
 - **Uso**: Prim é geralmente mais eficiente em grafos densos (muitas arestas).
 
