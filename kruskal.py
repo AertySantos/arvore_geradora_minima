@@ -34,7 +34,6 @@ class Grafo:
     # Aplicando o algoritmo de Kruskal
     def kruskal_algo(self):
         # Método para encontrar a Árvore Geradora Mínima usando o Algoritmo de Kruskal
-        resultado = []  # Lista para armazenar as arestas da Árvore Geradora Mínima
         i, e = 0, 0  # Inicializa variáveis para aresta e índice
         self.grafo = sorted(self.grafo, key=lambda item: item[2])  # Ordena as arestas por peso
         parent = []  # Lista para armazenar o pai de cada vértice
@@ -42,7 +41,7 @@ class Grafo:
         for node in range(self.V):
             parent.append(node)  # Inicializa cada vértice como seu próprio pai
             rank.append(0)       # Inicializa a classificação de cada vértice como 0
-        while e < self.V - 1:
+        while e < self.V - 1:#arestas da arvore m=n-1
             # Loop até que todos os vértices estejam incluídos na AGM
             u, v, w = self.grafo[i]  # Obtém a aresta com o peso mínimo
             i += 1  # Move para a próxima aresta
@@ -51,10 +50,12 @@ class Grafo:
             if x != y:
                 # Se adicionar a aresta não formar um ciclo
                 e += 1  # Incrementa a contagem de arestas
-                resultado.append([u, v, w])  # Adiciona a aresta à AGM
                 self.mst.append([u, v, w])  # Armazena a aresta na lista de MST
                 self.aplicar_uniao(parent, rank, x, y)  # Mescla os conjuntos de u e v
-        for u, v, peso in resultado:
+        print(i)
+        print(e)
+        print(self.V - 1)
+        for u, v, peso in self.mst:
             # Imprime as arestas da AGM
             print("%d - %d: %d" % (u, v, peso))
 
@@ -94,7 +95,9 @@ class Grafo:
 
 # Exemplo de uso
 g = Grafo(6)  # Cria um grafo com 6 vértices
+#g = Grafo(4)  # Cria um grafo com 6 vértices
 # Adiciona arestas com seus pesos ao grafo
+
 g.add_aresta(0, 1, 4)
 g.add_aresta(0, 2, 4)
 g.add_aresta(1, 2, 2)
@@ -111,5 +114,12 @@ g.add_aresta(4, 3, 3)
 g.add_aresta(5, 2, 2)
 g.add_aresta(5, 4, 3)
 
+"""
+g.add_aresta(0, 1, 1)
+g.add_aresta(1, 3, 1)
+g.add_aresta(0, 3, 3)
+g.add_aresta(1, 2, 2)
+g.add_aresta(2, 3, 4)
+"""
 g.kruskal_algo()  # Encontra e imprime a Árvore Geradora Mínima
 g.desenhar_mst()  # Desenha o grafo original e a MST
