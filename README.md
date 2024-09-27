@@ -37,7 +37,10 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
 3. Repetir até que todos os vértices estejam na árvore.
 
 ### Complexidade:
-- **Tempo**: \( O(E \log V) \), onde \( V \) é o número de vértices e \( E \) o número de arestas, usando uma fila de prioridade para obter o próximo vértice de menor peso.
+- **Tempo**: O laço externo executa \( V - 1 \) vezes (aproximadamente \( V \) vezes). A cada iteração do laço externo, o laço interno percorre todos os vértices \( V \) para verificar as arestas entre os vértices já selecionados e os vértices ainda não selecionados.
+
+Esse processo de "percorrer todos os vértices \( V \) para cada vértice selecionado" resulta em um total de \( V \) iterações no laço externo multiplicado por \( V \) iterações no laço interno, dando uma complexidade total de \( O(V \times V) = O(V^2) \).
+
 - **Uso**: Prim é geralmente mais eficiente em grafos densos (muitas arestas).
 
 ---
@@ -47,7 +50,7 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
 | Aspecto        | Kruskal                        | Prim                           |
 |----------------|--------------------------------|--------------------------------|
 | Abordagem      | Seleciona as arestas de menor peso e adiciona à árvore | Expande a partir de um vértice inicial |
-| Complexidade   | \( O(E \log E) \)              | \( O(E \log V) \)              |
+| Complexidade   | \( O(E \log E) \)              | \( O(V^2) \)             |
 | Melhor para    | Grafos esparsos                | Grafos densos                  |
 | Método         | Conjuntos disjuntos (Union-Find) | Fila de prioridade (Min-Heap)  |
 
@@ -58,7 +61,8 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
 ### Pré-requisitos
 
 - Python 3.x
-- Bibliotecas: `heapq` para Prim e uma implementação de Union-Find para Kruskal.
+- Matplotlib
+- Networkx
 
 ### Execução
 
@@ -76,7 +80,7 @@ O algoritmo de Prim constrói a MST de maneira progressiva, partindo de um vért
    python prim.py
    ```
 
-3. O programa solicitará a entrada do grafo, como a lista de vértices e arestas com pesos.
+3. O programa já possui uma entrada para o grafo.
 
 ---
 
